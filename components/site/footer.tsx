@@ -8,7 +8,14 @@ export function Footer({ settings }: { settings: SiteSettings }) {
     <footer className="border-t border-gray-200 bg-white">
       <Container className="grid gap-10 py-12 md:grid-cols-[1.3fr_1fr_1fr]">
         <div>
-          <Image src={settings.logo} alt="New Era Computer Training Centre logo" width={64} height={64} className="mb-4" />
+          <Image
+            src="/logo/logo.png?v=20260606"
+            alt="New Era Computer Training Centre logo"
+            width={220}
+            height={117}
+            className="mb-4 h-20 w-auto object-contain"
+            unoptimized
+          />
           <p className="max-w-md text-sm leading-7 text-gray-600">{settings.footer_text}</p>
         </div>
         <div>
