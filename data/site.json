@@ -1,0 +1,455 @@
+{
+  "settings": {
+    "id": "00000000-0000-0000-0000-000000000001",
+    "site_name": "New Era Computer Training Centre",
+    "phone": "+27 41 000 0000",
+    "email": "info@neweratraining.co.za",
+    "address": "Port Elizabeth (Gqeberha), Eastern Cape, South Africa",
+    "logo": "/images/new-era-logo.svg",
+    "favicon": "/favicon.ico",
+    "footer_text": "Professional computer training and skills development for individuals and organisations in Gqeberha.",
+    "facebook": "",
+    "linkedin": "",
+    "instagram": "",
+    "seo_title": "New Era Computer Training Centre | Computer Courses in Port Elizabeth",
+    "seo_description": "Professional computer training, Microsoft courses and skills development programmes for students, employees and organisations in Port Elizabeth (Gqeberha)."
+  },
+  "categories": [
+    {
+      "id": "10000000-0000-0000-0000-000000000001",
+      "name": "Computer Literacy",
+      "slug": "computer-literacy",
+      "description": "Build the essential digital confidence needed for everyday study and work."
+    },
+    {
+      "id": "10000000-0000-0000-0000-000000000002",
+      "name": "Microsoft Courses",
+      "slug": "microsoft-courses",
+      "description": "Practical Microsoft Office training for modern workplaces."
+    },
+    {
+      "id": "10000000-0000-0000-0000-000000000003",
+      "name": "Business Skills",
+      "slug": "business-skills",
+      "description": "Develop organised, workplace-ready administrative and project skills."
+    },
+    {
+      "id": "10000000-0000-0000-0000-000000000004",
+      "name": "Corporate Training",
+      "slug": "corporate-training",
+      "description": "Custom group programmes for teams, schools and organisations."
+    }
+  ],
+  "courses": [
+    {
+      "id": "20000000-0000-0000-0000-000000000001",
+      "title": "Computer Literacy",
+      "slug": "computer-literacy",
+      "excerpt": "A practical introduction to computers, the internet, email and essential office applications.",
+      "description": "This foundational programme helps learners become confident computer users. Training is practical, instructor-led and suitable for beginners who want workplace-ready digital skills.",
+      "duration": "5 days",
+      "requirements": [
+        "No previous computer experience required",
+        "Basic English literacy"
+      ],
+      "learning_outcomes": [
+        "Use a computer confidently",
+        "Create and manage files and folders",
+        "Use email and the internet responsibly",
+        "Complete basic tasks in common office applications"
+      ],
+      "who_should_attend": [
+        "First-time computer users",
+        "Job seekers",
+        "Employees needing digital confidence"
+      ],
+      "benefits": [
+        "Practical exercises",
+        "Supportive classroom environment",
+        "Skills applicable to daily office work"
+      ],
+      "category_id": "10000000-0000-0000-0000-000000000001",
+      "featured_image": "/images/course-computer-literacy.svg",
+      "og_image": "/images/course-computer-literacy.svg",
+      "is_featured": true,
+      "seo_title": "Computer Literacy Course in Port Elizabeth | New Era",
+      "seo_description": "Learn essential computer skills with practical beginner-friendly training in Port Elizabeth (Gqeberha).",
+      "faqs": [
+        {
+          "question": "Is this suitable for complete beginners?",
+          "answer": "Yes. The programme starts with the basics and builds confidence through guided practice."
+        },
+        {
+          "question": "Will I use a computer during the training?",
+          "answer": "Yes. The course is designed around practical exercises."
+        }
+      ]
+    },
+    {
+      "id": "20000000-0000-0000-0000-000000000002",
+      "title": "Intermediate Computer Skills",
+      "slug": "intermediate-computer-skills",
+      "excerpt": "Strengthen your office productivity, document management and everyday digital workflow.",
+      "description": "Designed for learners who already understand the basics and want to improve efficiency, accuracy and confidence when working with office software and digital information.",
+      "duration": "5 days",
+      "requirements": [
+        "Basic computer literacy"
+      ],
+      "learning_outcomes": [
+        "Improve document formatting",
+        "Manage files more efficiently",
+        "Use spreadsheets for routine workplace tasks",
+        "Apply better digital work habits"
+      ],
+      "who_should_attend": [
+        "Office workers",
+        "Administrative staff",
+        "Learners progressing beyond beginner level"
+      ],
+      "benefits": [
+        "Workplace-focused practice",
+        "Improved productivity",
+        "Structured skill progression"
+      ],
+      "category_id": "10000000-0000-0000-0000-000000000001",
+      "featured_image": "/images/course-intermediate.svg",
+      "og_image": "/images/course-intermediate.svg",
+      "is_featured": true,
+      "seo_title": "Intermediate Computer Skills Course | New Era Gqeberha",
+      "seo_description": "Improve office productivity with intermediate computer skills training in Port Elizabeth.",
+      "faqs": [
+        {
+          "question": "Do I need to complete the beginner course first?",
+          "answer": "Not necessarily. Learners with basic computer skills may enrol directly."
+        }
+      ]
+    },
+    {
+      "id": "20000000-0000-0000-0000-000000000003",
+      "title": "Advanced Computer Skills",
+      "slug": "advanced-computer-skills",
+      "excerpt": "Develop advanced office application skills for more demanding workplace responsibilities.",
+      "description": "An advanced programme for learners seeking stronger productivity, reporting and digital workflow skills for the workplace.",
+      "duration": "5 days",
+      "requirements": [
+        "Intermediate computer skills"
+      ],
+      "learning_outcomes": [
+        "Handle more complex office tasks",
+        "Use productivity tools efficiently",
+        "Prepare professional documents and reports",
+        "Apply advanced digital workflow practices"
+      ],
+      "who_should_attend": [
+        "Experienced office workers",
+        "Supervisors",
+        "Administrative professionals"
+      ],
+      "benefits": [
+        "Advanced practical exercises",
+        "Professional workflow improvement",
+        "Career-relevant skills"
+      ],
+      "category_id": "10000000-0000-0000-0000-000000000001",
+      "featured_image": "/images/course-advanced.svg",
+      "og_image": "/images/course-advanced.svg",
+      "is_featured": true,
+      "seo_title": "Advanced Computer Skills Course in Gqeberha | New Era",
+      "seo_description": "Build advanced workplace computer skills with professional training in Port Elizabeth.",
+      "faqs": [
+        {
+          "question": "Who is this course for?",
+          "answer": "It is aimed at learners who already work confidently with computers and want to progress further."
+        }
+      ]
+    },
+    {
+      "id": "20000000-0000-0000-0000-000000000004",
+      "title": "Microsoft Word",
+      "slug": "microsoft-word",
+      "excerpt": "Create, format and manage professional documents using Microsoft Word.",
+      "description": "Learn the practical Microsoft Word skills needed to produce polished workplace documents, letters and reports.",
+      "duration": "2 days",
+      "requirements": [
+        "Basic computer literacy"
+      ],
+      "learning_outcomes": [
+        "Format professional documents",
+        "Use tables and page layouts",
+        "Prepare letters and reports",
+        "Work efficiently with Word tools"
+      ],
+      "who_should_attend": [
+        "Office workers",
+        "Students",
+        "Administrative staff"
+      ],
+      "benefits": [
+        "Hands-on document practice",
+        "Improved office readiness",
+        "Better document presentation"
+      ],
+      "category_id": "10000000-0000-0000-0000-000000000002",
+      "featured_image": "/images/course-word.svg",
+      "og_image": "/images/course-word.svg",
+      "is_featured": false,
+      "seo_title": "Microsoft Word Training in Port Elizabeth | New Era",
+      "seo_description": "Learn practical Microsoft Word skills for professional documents and reports.",
+      "faqs": []
+    },
+    {
+      "id": "20000000-0000-0000-0000-000000000005",
+      "title": "Microsoft Excel",
+      "slug": "microsoft-excel",
+      "excerpt": "Build practical spreadsheet skills for calculations, data organisation and reporting.",
+      "description": "Learn how to use Microsoft Excel for everyday workplace calculations, lists, basic analysis and reporting.",
+      "duration": "3 days",
+      "requirements": [
+        "Basic computer literacy"
+      ],
+      "learning_outcomes": [
+        "Create and format spreadsheets",
+        "Use common formulas",
+        "Organise workplace data",
+        "Prepare clear basic reports"
+      ],
+      "who_should_attend": [
+        "Administrative staff",
+        "Small business teams",
+        "Office workers"
+      ],
+      "benefits": [
+        "Practical spreadsheet exercises",
+        "Workplace-ready formulas",
+        "Improved data confidence"
+      ],
+      "category_id": "10000000-0000-0000-0000-000000000002",
+      "featured_image": "/images/course-excel.svg",
+      "og_image": "/images/course-excel.svg",
+      "is_featured": true,
+      "seo_title": "Microsoft Excel Course in Port Elizabeth | New Era",
+      "seo_description": "Learn practical Microsoft Excel spreadsheet skills for the workplace in Gqeberha.",
+      "faqs": [
+        {
+          "question": "Does the course include formulas?",
+          "answer": "Yes. Learners practise commonly used formulas and everyday spreadsheet tasks."
+        }
+      ]
+    },
+    {
+      "id": "20000000-0000-0000-0000-000000000006",
+      "title": "Microsoft PowerPoint",
+      "slug": "microsoft-powerpoint",
+      "excerpt": "Create professional presentations with clear structure and effective visual communication.",
+      "description": "This practical course teaches learners how to create, format and present effective slides for meetings and training sessions.",
+      "duration": "1 day",
+      "requirements": [
+        "Basic computer literacy"
+      ],
+      "learning_outcomes": [
+        "Build structured slide decks",
+        "Use layouts and themes",
+        "Add images and simple charts",
+        "Present information clearly"
+      ],
+      "who_should_attend": [
+        "Employees",
+        "Students",
+        "Team leaders"
+      ],
+      "benefits": [
+        "Presentation confidence",
+        "Better visual communication",
+        "Practical slide creation"
+      ],
+      "category_id": "10000000-0000-0000-0000-000000000002",
+      "featured_image": "/images/course-powerpoint.svg",
+      "og_image": "/images/course-powerpoint.svg",
+      "is_featured": false,
+      "seo_title": "Microsoft PowerPoint Training | New Era Port Elizabeth",
+      "seo_description": "Create professional presentations with practical Microsoft PowerPoint training.",
+      "faqs": []
+    },
+    {
+      "id": "20000000-0000-0000-0000-000000000007",
+      "title": "IT End User Computing",
+      "slug": "it-end-user-computing",
+      "excerpt": "Develop structured end-user computing skills for study, work and professional development.",
+      "description": "A structured programme covering the practical digital knowledge and application skills needed by modern computer users.",
+      "duration": "Contact us for programme options",
+      "requirements": [
+        "Programme entry requirements are confirmed during enquiry"
+      ],
+      "learning_outcomes": [
+        "Apply end-user computing principles",
+        "Use digital tools productively",
+        "Work with office applications",
+        "Strengthen workplace readiness"
+      ],
+      "who_should_attend": [
+        "Job seekers",
+        "Employees",
+        "Organisations seeking structured training"
+      ],
+      "benefits": [
+        "Structured learning pathway",
+        "Practical digital skills",
+        "Suitable for group delivery"
+      ],
+      "category_id": "10000000-0000-0000-0000-000000000001",
+      "featured_image": "/images/course-end-user.svg",
+      "og_image": "/images/course-end-user.svg",
+      "is_featured": false,
+      "seo_title": "IT End User Computing Training in Gqeberha | New Era",
+      "seo_description": "Structured IT end user computing skills development for individuals and organisations.",
+      "faqs": []
+    },
+    {
+      "id": "20000000-0000-0000-0000-000000000008",
+      "title": "Project Management",
+      "slug": "project-management",
+      "excerpt": "Understand the practical principles of planning, organising and monitoring projects.",
+      "description": "Develop practical project management awareness for better planning, communication and delivery in the workplace.",
+      "duration": "3 days",
+      "requirements": [
+        "No specialist software knowledge required"
+      ],
+      "learning_outcomes": [
+        "Understand project stages",
+        "Set goals and milestones",
+        "Monitor tasks and responsibilities",
+        "Improve project communication"
+      ],
+      "who_should_attend": [
+        "Team leaders",
+        "Administrators",
+        "Employees supporting projects"
+      ],
+      "benefits": [
+        "Practical planning methods",
+        "Clearer project communication",
+        "Improved organisation"
+      ],
+      "category_id": "10000000-0000-0000-0000-000000000003",
+      "featured_image": "/images/course-project.svg",
+      "og_image": "/images/course-project.svg",
+      "is_featured": true,
+      "seo_title": "Project Management Course in Port Elizabeth | New Era",
+      "seo_description": "Learn practical project planning and management skills for the workplace.",
+      "faqs": []
+    },
+    {
+      "id": "20000000-0000-0000-0000-000000000009",
+      "title": "Records Management",
+      "slug": "records-management",
+      "excerpt": "Improve the organisation, handling and retrieval of workplace records.",
+      "description": "This programme introduces practical methods for managing records accurately and consistently in office environments.",
+      "duration": "2 days",
+      "requirements": [
+        "Suitable for administrative and support staff"
+      ],
+      "learning_outcomes": [
+        "Organise records systematically",
+        "Improve retrieval processes",
+        "Understand record handling responsibilities",
+        "Apply practical office procedures"
+      ],
+      "who_should_attend": [
+        "Administrative staff",
+        "Records officers",
+        "Office support teams"
+      ],
+      "benefits": [
+        "Better organisation",
+        "Improved information retrieval",
+        "Practical office procedures"
+      ],
+      "category_id": "10000000-0000-0000-0000-000000000003",
+      "featured_image": "/images/course-records.svg",
+      "og_image": "/images/course-records.svg",
+      "is_featured": false,
+      "seo_title": "Records Management Training | New Era Gqeberha",
+      "seo_description": "Improve workplace records organisation and retrieval with practical training.",
+      "faqs": []
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "30000000-0000-0000-0000-000000000001",
+      "name": "Training Participant",
+      "company": "Office Skills Programme",
+      "review": "The training was practical, clear and easy to follow. I gained confidence using office applications in my daily work.",
+      "featured": true
+    },
+    {
+      "id": "30000000-0000-0000-0000-000000000002",
+      "name": "Corporate Client",
+      "company": "Group Training Programme",
+      "review": "The programme was structured around our team's needs and delivered in a professional, supportive way.",
+      "featured": true
+    },
+    {
+      "id": "30000000-0000-0000-0000-000000000003",
+      "name": "Course Graduate",
+      "company": "Computer Literacy Programme",
+      "review": "I started as a beginner and left feeling much more comfortable using a computer for job applications and office tasks.",
+      "featured": true
+    }
+  ],
+  "posts": [
+    {
+      "id": "40000000-0000-0000-0000-000000000001",
+      "title": "Why Computer Literacy Still Matters in the Modern Workplace",
+      "slug": "why-computer-literacy-still-matters",
+      "excerpt": "Digital confidence remains essential for job seekers, employees and anyone building workplace skills.",
+      "content": "Computer literacy is more than knowing how to switch on a computer. In the workplace, it includes managing files, communicating by email, using office applications and working confidently with digital information. A structured beginner programme can help learners develop these skills through practical exercises and guided support.\n\nFor job seekers, digital confidence can make it easier to prepare documents, search for opportunities and complete online applications. For employees, the same skills support accuracy, productivity and professional communication.",
+      "featured_image": "/images/blog-literacy.svg",
+      "og_image": "/images/blog-literacy.svg",
+      "seo_title": "Why Computer Literacy Matters at Work | New Era",
+      "seo_description": "Learn why practical computer literacy remains important for job seekers and employees.",
+      "status": "published",
+      "tags": [
+        "Computer Literacy",
+        "Workplace Skills"
+      ],
+      "category_id": null,
+      "created_at": "2026-05-15T08:00:00+02:00"
+    },
+    {
+      "id": "40000000-0000-0000-0000-000000000002",
+      "title": "How Microsoft Excel Skills Can Improve Office Productivity",
+      "slug": "excel-skills-office-productivity",
+      "excerpt": "Even basic spreadsheet skills can save time and improve accuracy in everyday administrative work.",
+      "content": "Microsoft Excel is widely used for lists, calculations, budgets and basic reporting. Learning how to format spreadsheets, use common formulas and organise data can make routine office work faster and more accurate.\n\nThe best way to learn is through practical exercises that reflect real workplace tasks. Start with a clear foundation and build confidence step by step.",
+      "featured_image": "/images/blog-excel.svg",
+      "og_image": "/images/blog-excel.svg",
+      "seo_title": "Excel Skills for Office Productivity | New Era",
+      "seo_description": "Discover how practical Excel training can improve everyday office productivity.",
+      "status": "published",
+      "tags": [
+        "Microsoft Excel",
+        "Office Productivity"
+      ],
+      "category_id": null,
+      "created_at": "2026-05-05T08:00:00+02:00"
+    },
+    {
+      "id": "40000000-0000-0000-0000-000000000003",
+      "title": "Choosing the Right Computer Course for Your Goals",
+      "slug": "choosing-the-right-computer-course",
+      "excerpt": "Start with your current skill level and the tasks you need to perform at work or while job seeking.",
+      "content": "The right computer course depends on your starting point and your goals. Beginners benefit from a computer literacy foundation. Learners who already understand basic computer use may be ready for intermediate training or a focused Microsoft course.\n\nFor organisations, a group training discussion can identify skill gaps and create a programme suited to the team's needs.",
+      "featured_image": "/images/blog-course-choice.svg",
+      "og_image": "/images/blog-course-choice.svg",
+      "seo_title": "How to Choose a Computer Course | New Era",
+      "seo_description": "Choose the right computer training programme based on your goals and current skill level.",
+      "status": "published",
+      "tags": [
+        "Training Advice",
+        "Skills Development"
+      ],
+      "category_id": null,
+      "created_at": "2026-04-20T08:00:00+02:00"
+    }
+  ]
+}

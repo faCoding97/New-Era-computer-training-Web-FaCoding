@@ -1,0 +1,4 @@
+export function AdminHeading({title,text,children}:{title:string;text?:string;children?:React.ReactNode}){return <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end"><div><h1 className="text-3xl font-bold text-gray-950">{title}</h1>{text?<p className="mt-2 text-sm leading-6 text-gray-600">{text}</p>:null}</div>{children}</div>}
+export function Panel({title,children}:{title?:string;children:React.ReactNode}){return <section className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">{title?<h2 className="mb-4 text-lg font-bold text-gray-900">{title}</h2>:null}{children}</section>}
+export const inputClass='rounded-md border border-gray-300 px-3 py-2 text-sm';
+export const buttonClass='rounded-md bg-brand px-4 py-2.5 text-sm font-bold text-white hover:bg-brand-secondary';

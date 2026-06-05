@@ -1,0 +1,4 @@
+import type { MetadataRoute } from 'next';
+import { getCourses, getPosts } from '@/lib/content';
+import { absoluteUrl } from '@/lib/utils';
+export default async function sitemap():Promise<MetadataRoute.Sitemap>{const [courses,posts]=await Promise.all([getCourses(),getPosts()]);const staticRoutes=['','/about','/courses','/corporate-training','/blog','/contact'].map(path=>({url:absoluteUrl(path),lastModified:new Date(),changeFrequency:'weekly' as const,priority:path===''?1:0.8}));return [...staticRoutes,...courses.map(course=>({url:absoluteUrl(`/courses/${course.slug}`),lastModified:new Date(course.created_at||Date.now()),changeFrequency:'monthly' as const,priority:0.8})),...posts.map(post=>({url:absoluteUrl(`/blog/${post.slug}`),lastModified:new Date(post.created_at),changeFrequency:'monthly' as const,priority:0.6}))]}
