@@ -20,8 +20,16 @@ export function Header({ settings }: { settings: SiteSettings }) {
   return (
     <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-3" aria-label={`${settings.site_name} home`}>
-          <Image src={settings.logo} width={54} height={54} alt="New Era Computer Training Centre logo" className="h-12 w-12" priority />
+        <Link href="/" className="flex min-w-0 items-center gap-3" aria-label={`${settings.site_name} home`}>
+          <Image
+            src="/logo/logo.png?v=20260606"
+            width={190}
+            height={101}
+            alt="New Era Computer Training Centre logo"
+            className="h-14 w-auto shrink-0 object-contain sm:h-16"
+            priority
+            unoptimized
+          />
           <span className="hidden max-w-[230px] text-sm font-bold leading-tight text-brand sm:block">New Era Computer<br />Training Centre</span>
         </Link>
         <nav className="hidden items-center gap-6 lg:flex" aria-label="Main navigation">
