@@ -2,12 +2,17 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import type { SiteSettings } from '@/lib/types';
+import { PngIcon } from '@/components/site/png-icon';
 
 const links = [
-  ['Home', '/'], ['About', '/about'], ['Courses', '/courses'], ['Corporate Training', '/corporate-training'], ['Blog', '/blog'], ['Contact', '/contact']
+  ['Home', '/'],
+  ['About', '/about'],
+  ['Courses', '/courses'],
+  ['Corporate Training', '/corporate-training'],
+  ['Blog', '/blog'],
+  ['Contact', '/contact']
 ] as const;
 
 export function Header({ settings }: { settings: SiteSettings }) {
@@ -24,7 +29,7 @@ export function Header({ settings }: { settings: SiteSettings }) {
           <Link href="/courses#courses" className="rounded-md bg-brand px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-secondary">Browse Courses</Link>
         </nav>
         <button type="button" className="rounded-md p-2 text-brand lg:hidden" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="mobile-menu" aria-label="Toggle navigation">
-          {open ? <X /> : <Menu />}
+          <PngIcon name={open ? 'x' : 'menu'} tone="brand" size={24} />
         </button>
       </div>
       {open ? (

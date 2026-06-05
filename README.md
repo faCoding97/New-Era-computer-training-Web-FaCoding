@@ -64,6 +64,18 @@ supabase/schema.sql          complete schema, RLS and Storage policies
 supabase/seed.sql            starter CMS records
 ```
 
+
+## PNG-only image policy
+
+This project intentionally uses PNG assets only. No SVG files or SVG-based icon dependency are included.
+
+Logo locations:
+
+- Main New Era website logo: `public/logo/logo.png`
+- Elix Code footer signature logo: `public/logo/Elix-logo.png`
+
+Course artwork, blog artwork, the app icon and user-interface icons are also stored as PNG files under `public/images`, `public/icon.png` and `public/icons`.
+
 ## Supabase setup
 
 1. Create a Supabase project.

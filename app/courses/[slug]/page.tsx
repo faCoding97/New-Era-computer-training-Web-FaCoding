@@ -2,15 +2,151 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { CheckCircle2, Clock, Users } from 'lucide-react';
 import { BookingForm } from '@/components/forms/booking-form.client';
 import { Container } from '@/components/site/container';
 import { CourseCard } from '@/components/site/course-card';
 import { JsonLd } from '@/components/site/json-ld';
-import { getCourseBySlug, getCourses, getTestimonials } from '@/lib/content';
+import { PngIcon } from '@/components/site/png-icon';
 import { TestimonialCard } from '@/components/site/testimonial-card';
+import { getCourseBySlug, getCourses, getTestimonials } from '@/lib/content';
 import { absoluteUrl } from '@/lib/utils';
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> { const course=await getCourseBySlug(params.slug); if(!course)return {}; return { title: course.seo_title || course.title, description: course.seo_description || course.excerpt, openGraph:{title:course.seo_title || course.title,description:course.seo_description || course.excerpt,images:course.og_image?[course.og_image]:[]},alternates:{canonical:absoluteUrl(`/courses/${course.slug}`)}}; }
-export default async function CoursePage({ params }: { params: { slug: string } }) { const [course, allCourses, testimonials]=await Promise.all([getCourseBySlug(params.slug),getCourses(),getTestimonials()]); if(!course)notFound(); const related=allCourses.filter(item=>item.id!==course.id && item.category_id===course.category_id).slice(0,3); const schema={ '@context':'https://schema.org','@type':'Course',name:course.title,description:course.excerpt,provider:{'@type':'Organization',name:'New Era Computer Training Centre',sameAs:absoluteUrl('/')},url:absoluteUrl(`/courses/${course.slug}`)}; return <main><JsonLd data={schema}/><section className="border-b border-blue-100 bg-gradient-to-br from-blue-50 via-white to-amber-50"><Container className="grid items-center gap-10 py-16 lg:grid-cols-[1.1fr_.9fr]"><div><p className="text-xs font-bold uppercase tracking-[0.22em] text-brand-secondary">Professional course</p><h1 className="mt-3 text-4xl font-bold tracking-tight text-gray-950 sm:text-5xl">{course.title}</h1><p className="mt-5 text-lg leading-8 text-gray-600">{course.excerpt}</p><div className="mt-6 flex flex-wrap gap-4 text-sm font-semibold text-gray-700"><span className="flex items-center gap-2"><Clock className="h-5 w-5 text-accent"/>{course.duration}</span><span className="flex items-center gap-2"><Users className="h-5 w-5 text-accent"/>Instructor-led training</span></div><Link href="#booking" className="mt-8 inline-flex rounded-md bg-brand px-5 py-3 text-sm font-bold text-white hover:bg-brand-secondary">Book This Course</Link></div><Image src={course.featured_image || '/images/course-generic.svg'} alt="" width={720} height={420} className="rounded-2xl border border-blue-100 bg-white shadow-institution"/></Container></section><section className="py-16"><Container className="grid gap-12 lg:grid-cols-[1fr_320px]"><div><h2 className="text-3xl font-bold text-gray-900">Course overview</h2><p className="mt-4 leading-8 text-gray-600">{course.description}</p><div className="mt-10 grid gap-8 md:grid-cols-2"><List title="Learning outcomes" items={course.learning_outcomes}/><List title="Course benefits" items={course.benefits}/><List title="Requirements" items={course.requirements}/><List title="Who should attend" items={course.who_should_attend}/></div></div><aside className="h-fit rounded-xl border border-gray-200 bg-white p-6 shadow-sm"><p className="text-xs font-bold uppercase tracking-wider text-brand-secondary">Course summary</p><dl className="mt-4 space-y-4 text-sm"><div><dt className="font-bold text-gray-900">Course</dt><dd className="mt-1 text-gray-600">{course.title}</dd></div><div><dt className="font-bold text-gray-900">Duration</dt><dd className="mt-1 text-gray-600">{course.duration}</dd></div><div><dt className="font-bold text-gray-900">Location</dt><dd className="mt-1 text-gray-600">Port Elizabeth (Gqeberha)</dd></div></dl></aside></Container></section>{course.faqs.length?<section className="border-y border-gray-200 bg-white py-16"><Container><h2 className="text-3xl font-bold text-gray-900">Frequently asked questions</h2><div className="mt-6 grid gap-4">{course.faqs.map(item=><details key={item.question} className="rounded-xl border border-gray-200 p-5"><summary className="cursor-pointer font-bold text-gray-900">{item.question}</summary><p className="mt-3 text-sm leading-7 text-gray-600">{item.answer}</p></details>)}</div></Container></section>:null}<section id="booking" className="py-16"><Container className="grid gap-8 lg:grid-cols-[.8fr_1.2fr]"><div><p className="text-xs font-bold uppercase tracking-wider text-brand-secondary">Booking request</p><h2 className="mt-2 text-3xl font-bold text-gray-900">Book this course</h2><p className="mt-4 leading-7 text-gray-600">Submit your details and preferred date. Our team can contact you to confirm the training arrangement.</p></div><BookingForm courses={allCourses} selectedCourseId={course.id}/></Container></section>{testimonials.length?<section className="border-t border-gray-200 bg-white py-16"><Container><h2 className="text-3xl font-bold text-gray-900">What learners say</h2><div className="mt-8 grid gap-6 md:grid-cols-3">{testimonials.slice(0,3).map(item=><TestimonialCard key={item.id} item={item}/>)}</div></Container></section>:null}{related.length?<section className="border-t border-gray-200 bg-white py-16"><Container><h2 className="text-3xl font-bold text-gray-900">Related courses</h2><div className="mt-8 grid gap-6 md:grid-cols-3">{related.map(item=><CourseCard key={item.id} course={item}/>)}</div></Container></section>:null}</main> }
-function List({title,items}:{title:string;items:string[]}) { return <div><h2 className="text-xl font-bold text-gray-900">{title}</h2><ul className="mt-4 space-y-3">{items.map(item=><li key={item} className="flex gap-2 text-sm leading-6 text-gray-600"><CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-accent"/>{item}</li>)}</ul></div> }
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const course = await getCourseBySlug(params.slug);
+  if (!course) return {};
+  return {
+    title: course.seo_title || course.title,
+    description: course.seo_description || course.excerpt,
+    openGraph: {
+      title: course.seo_title || course.title,
+      description: course.seo_description || course.excerpt,
+      images: course.og_image ? [course.og_image] : []
+    },
+    alternates: { canonical: absoluteUrl(`/courses/${course.slug}`) }
+  };
+}
+
+export default async function CoursePage({ params }: { params: { slug: string } }) {
+  const [course, allCourses, testimonials] = await Promise.all([
+    getCourseBySlug(params.slug),
+    getCourses(),
+    getTestimonials()
+  ]);
+
+  if (!course) notFound();
+
+  const related = allCourses.filter((item) => item.id !== course.id && item.category_id === course.category_id).slice(0, 3);
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: course.title,
+    description: course.excerpt,
+    provider: { '@type': 'Organization', name: 'New Era Computer Training Centre', sameAs: absoluteUrl('/') },
+    url: absoluteUrl(`/courses/${course.slug}`)
+  };
+
+  return (
+    <main>
+      <JsonLd data={schema} />
+      <section className="border-b border-blue-100 bg-gradient-to-br from-blue-50 via-white to-amber-50">
+        <Container className="grid items-center gap-10 py-16 lg:grid-cols-[1.1fr_.9fr]">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-brand-secondary">Professional course</p>
+            <h1 className="mt-3 text-4xl font-bold tracking-tight text-gray-950 sm:text-5xl">{course.title}</h1>
+            <p className="mt-5 text-lg leading-8 text-gray-600">{course.excerpt}</p>
+            <div className="mt-6 flex flex-wrap gap-4 text-sm font-semibold text-gray-700">
+              <span className="flex items-center gap-2"><PngIcon name="clock" tone="accent" size={20} />{course.duration}</span>
+              <span className="flex items-center gap-2"><PngIcon name="users" tone="accent" size={20} />Instructor-led training</span>
+            </div>
+            <Link href="#booking" className="mt-8 inline-flex rounded-md bg-brand px-5 py-3 text-sm font-bold text-white hover:bg-brand-secondary">Book This Course</Link>
+          </div>
+          <Image src={course.featured_image || '/images/course-generic.png'} alt="" width={720} height={420} className="rounded-2xl border border-blue-100 bg-white shadow-institution" />
+        </Container>
+      </section>
+
+      <section className="py-16">
+        <Container className="grid gap-12 lg:grid-cols-[1fr_320px]">
+          <div>
+            <h2 className="text-3xl font-bold text-gray-900">Course overview</h2>
+            <p className="mt-4 leading-8 text-gray-600">{course.description}</p>
+            <div className="mt-10 grid gap-8 md:grid-cols-2">
+              <List title="Learning outcomes" items={course.learning_outcomes} />
+              <List title="Course benefits" items={course.benefits} />
+              <List title="Requirements" items={course.requirements} />
+              <List title="Who should attend" items={course.who_should_attend} />
+            </div>
+          </div>
+          <aside className="h-fit rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+            <p className="text-xs font-bold uppercase tracking-wider text-brand-secondary">Course summary</p>
+            <dl className="mt-4 space-y-4 text-sm">
+              <div><dt className="font-bold text-gray-900">Course</dt><dd className="mt-1 text-gray-600">{course.title}</dd></div>
+              <div><dt className="font-bold text-gray-900">Duration</dt><dd className="mt-1 text-gray-600">{course.duration}</dd></div>
+              <div><dt className="font-bold text-gray-900">Location</dt><dd className="mt-1 text-gray-600">Port Elizabeth (Gqeberha)</dd></div>
+            </dl>
+          </aside>
+        </Container>
+      </section>
+
+      {course.faqs.length ? (
+        <section className="border-y border-gray-200 bg-white py-16">
+          <Container>
+            <h2 className="text-3xl font-bold text-gray-900">Frequently asked questions</h2>
+            <div className="mt-6 grid gap-4">
+              {course.faqs.map((item) => (
+                <details key={item.question} className="rounded-xl border border-gray-200 p-5">
+                  <summary className="cursor-pointer font-bold text-gray-900">{item.question}</summary>
+                  <p className="mt-3 text-sm leading-7 text-gray-600">{item.answer}</p>
+                </details>
+              ))}
+            </div>
+          </Container>
+        </section>
+      ) : null}
+
+      <section id="booking" className="py-16">
+        <Container className="grid gap-8 lg:grid-cols-[.8fr_1.2fr]">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-wider text-brand-secondary">Booking request</p>
+            <h2 className="mt-2 text-3xl font-bold text-gray-900">Book this course</h2>
+            <p className="mt-4 leading-7 text-gray-600">Submit your details and preferred date. Our team can contact you to confirm the training arrangement.</p>
+          </div>
+          <BookingForm courses={allCourses} selectedCourseId={course.id} />
+        </Container>
+      </section>
+
+      {testimonials.length ? (
+        <section className="border-t border-gray-200 bg-white py-16">
+          <Container>
+            <h2 className="text-3xl font-bold text-gray-900">What learners say</h2>
+            <div className="mt-8 grid gap-6 md:grid-cols-3">{testimonials.slice(0, 3).map((item) => <TestimonialCard key={item.id} item={item} />)}</div>
+          </Container>
+        </section>
+      ) : null}
+
+      {related.length ? (
+        <section className="border-t border-gray-200 bg-white py-16">
+          <Container>
+            <h2 className="text-3xl font-bold text-gray-900">Related courses</h2>
+            <div className="mt-8 grid gap-6 md:grid-cols-3">{related.map((item) => <CourseCard key={item.id} course={item} />)}</div>
+          </Container>
+        </section>
+      ) : null}
+    </main>
+  );
+}
+
+function List({ title, items }: { title: string; items: string[] }) {
+  return (
+    <div>
+      <h2 className="text-xl font-bold text-gray-900">{title}</h2>
+      <ul className="mt-4 space-y-3">
+        {items.map((item) => (
+          <li key={item} className="flex gap-2 text-sm leading-6 text-gray-600">
+            <PngIcon name="check-circle" tone="accent" size={20} className="mt-0.5" />
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}

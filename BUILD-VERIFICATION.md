@@ -16,3 +16,13 @@ Verified locally before packaging:
 Expected build notice:
 
 - `components/site/footer.tsx` retains a plain `<img>` element because the requested Elix Code footer signature was preserved exactly. Next.js emits a non-blocking optimization warning for that mandated snippet.
+
+## PNG-only asset verification
+
+- Main website logo resolves from `/logo/logo.png`.
+- Elix Code footer signature resolves from `/logo/Elix-logo.png`.
+- The manifest icon resolves from `/icon.png`.
+- Course, blog and UI icon assets resolve as PNG files.
+- Public SVG asset count: `0`.
+- Source SVG reference count: `0`.
+- `lucide-react` was removed so the rendered interface no longer injects SVG icons.
