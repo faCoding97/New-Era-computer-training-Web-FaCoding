@@ -2,8 +2,8 @@
   "settings": {
     "id": "00000000-0000-0000-0000-000000000001",
     "site_name": "New Era Computer Training Centre",
-    "phone": "+27 41 000 0000",
-    "email": "info@neweratraining.co.za",
+    "phone": "+27 69 587 7199",
+    "email": "neweratraining@outlook.com",
     "address": "Port Elizabeth (Gqeberha), Eastern Cape, South Africa",
     "logo": "/logo/logo.png",
     "favicon": "/favicon.ico",
@@ -92,9 +92,7 @@
       "excerpt": "Strengthen your office productivity, document management and everyday digital workflow.",
       "description": "Designed for learners who already understand the basics and want to improve efficiency, accuracy and confidence when working with office software and digital information.",
       "duration": "5 days",
-      "requirements": [
-        "Basic computer literacy"
-      ],
+      "requirements": ["Basic computer literacy"],
       "learning_outcomes": [
         "Improve document formatting",
         "Manage files more efficiently",
@@ -131,9 +129,7 @@
       "excerpt": "Develop advanced office application skills for more demanding workplace responsibilities.",
       "description": "An advanced programme for learners seeking stronger productivity, reporting and digital workflow skills for the workplace.",
       "duration": "5 days",
-      "requirements": [
-        "Intermediate computer skills"
-      ],
+      "requirements": ["Intermediate computer skills"],
       "learning_outcomes": [
         "Handle more complex office tasks",
         "Use productivity tools efficiently",
@@ -170,9 +166,7 @@
       "excerpt": "Create, format and manage professional documents using Microsoft Word.",
       "description": "Learn the practical Microsoft Word skills needed to produce polished workplace documents, letters and reports.",
       "duration": "2 days",
-      "requirements": [
-        "Basic computer literacy"
-      ],
+      "requirements": ["Basic computer literacy"],
       "learning_outcomes": [
         "Format professional documents",
         "Use tables and page layouts",
@@ -204,9 +198,7 @@
       "excerpt": "Build practical spreadsheet skills for calculations, data organisation and reporting.",
       "description": "Learn how to use Microsoft Excel for everyday workplace calculations, lists, basic analysis and reporting.",
       "duration": "3 days",
-      "requirements": [
-        "Basic computer literacy"
-      ],
+      "requirements": ["Basic computer literacy"],
       "learning_outcomes": [
         "Create and format spreadsheets",
         "Use common formulas",
@@ -243,20 +235,14 @@
       "excerpt": "Create professional presentations with clear structure and effective visual communication.",
       "description": "This practical course teaches learners how to create, format and present effective slides for meetings and training sessions.",
       "duration": "1 day",
-      "requirements": [
-        "Basic computer literacy"
-      ],
+      "requirements": ["Basic computer literacy"],
       "learning_outcomes": [
         "Build structured slide decks",
         "Use layouts and themes",
         "Add images and simple charts",
         "Present information clearly"
       ],
-      "who_should_attend": [
-        "Employees",
-        "Students",
-        "Team leaders"
-      ],
+      "who_should_attend": ["Employees", "Students", "Team leaders"],
       "benefits": [
         "Presentation confidence",
         "Better visual communication",
@@ -311,9 +297,7 @@
       "excerpt": "Understand the practical principles of planning, organising and monitoring projects.",
       "description": "Develop practical project management awareness for better planning, communication and delivery in the workplace.",
       "duration": "3 days",
-      "requirements": [
-        "No specialist software knowledge required"
-      ],
+      "requirements": ["No specialist software knowledge required"],
       "learning_outcomes": [
         "Understand project stages",
         "Set goals and milestones",
@@ -345,9 +329,7 @@
       "excerpt": "Improve the organisation, handling and retrieval of workplace records.",
       "description": "This programme introduces practical methods for managing records accurately and consistently in office environments.",
       "duration": "2 days",
-      "requirements": [
-        "Suitable for administrative and support staff"
-      ],
+      "requirements": ["Suitable for administrative and support staff"],
       "learning_outcomes": [
         "Organise records systematically",
         "Improve retrieval processes",
@@ -408,10 +390,7 @@
       "seo_title": "Why Computer Literacy Matters at Work | New Era",
       "seo_description": "Learn why practical computer literacy remains important for job seekers and employees.",
       "status": "published",
-      "tags": [
-        "Computer Literacy",
-        "Workplace Skills"
-      ],
+      "tags": ["Computer Literacy", "Workplace Skills"],
       "category_id": null,
       "created_at": "2026-05-15T08:00:00+02:00"
     },
@@ -426,10 +405,7 @@
       "seo_title": "Excel Skills for Office Productivity | New Era",
       "seo_description": "Discover how practical Excel training can improve everyday office productivity.",
       "status": "published",
-      "tags": [
-        "Microsoft Excel",
-        "Office Productivity"
-      ],
+      "tags": ["Microsoft Excel", "Office Productivity"],
       "category_id": null,
       "created_at": "2026-05-05T08:00:00+02:00"
     },
@@ -444,10 +420,7 @@
       "seo_title": "How to Choose a Computer Course | New Era",
       "seo_description": "Choose the right computer training programme based on your goals and current skill level.",
       "status": "published",
-      "tags": [
-        "Training Advice",
-        "Skills Development"
-      ],
+      "tags": ["Training Advice", "Skills Development"],
       "category_id": null,
       "created_at": "2026-04-20T08:00:00+02:00"
     }

@@ -1,7 +1,7 @@
 -- Complete starter content. Run after schema.sql. Replace placeholder contact details in the CMS after login.
 
 insert into public.site_settings (id,site_name,phone,email,address,logo,favicon,footer_text,facebook,linkedin,instagram,seo_title,seo_description) values
-('00000000-0000-0000-0000-000000000001','New Era Computer Training Centre','+27 41 000 0000','info@neweratraining.co.za','Port Elizabeth (Gqeberha), Eastern Cape, South Africa','/logo/logo.png','/favicon.ico','Professional computer training and skills development for individuals and organisations in Gqeberha.','','','','New Era Computer Training Centre | Computer Courses in Port Elizabeth','Professional computer training, Microsoft courses and skills development programmes for students, employees and organisations in Port Elizabeth (Gqeberha).')
+('00000000-0000-0000-0000-000000000001','New Era Computer Training Centre','+27 69 587 7199','neweratraining@outlook.com','Port Elizabeth (Gqeberha), Eastern Cape, South Africa','/logo/logo.png','/favicon.ico','Professional computer training and skills development for individuals and organisations in Gqeberha.','','','','New Era Computer Training Centre | Computer Courses in Port Elizabeth','Professional computer training, Microsoft courses and skills development programmes for students, employees and organisations in Port Elizabeth (Gqeberha).')
 on conflict (id) do update set site_name=excluded.site_name, phone=excluded.phone, email=excluded.email, address=excluded.address, logo=excluded.logo, favicon=excluded.favicon, footer_text=excluded.footer_text, seo_title=excluded.seo_title, seo_description=excluded.seo_description;
 
 insert into public.course_categories (id,name,slug,description) values
