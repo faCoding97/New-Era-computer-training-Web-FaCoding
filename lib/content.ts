@@ -4,12 +4,17 @@ import { hasSupabaseEnv } from '@/lib/supabase/env';
 import { createClient } from '@/lib/supabase/server';
 
 const fallback = seed as SiteData;
+const updatedPhone = '+27 79 294 0501';
+
+function withUpdatedPhone(settings: SiteSettings): SiteSettings {
+  return { ...settings, phone: updatedPhone };
+}
 
 export async function getSiteSettings(): Promise<SiteSettings> {
-  if (!hasSupabaseEnv()) return fallback.settings;
+  if (!hasSupabaseEnv()) return withUpdatedPhone(fallback.settings);
   const supabase = createClient();
   const { data } = await supabase.from('site_settings').select('*').limit(1).maybeSingle();
-  return (data as SiteSettings | null) ?? fallback.settings;
+  return withUpdatedPhone((data as SiteSettings | null) ?? fallback.settings);
 }
 
 export async function getCategories(): Promise<CourseCategory[]> {
@@ -19,20 +24,12 @@ export async function getCategories(): Promise<CourseCategory[]> {
   return (data as CourseCategory[] | null)?.length ? data as CourseCategory[] : fallback.categories;
 }
 
-export async function getCourses(options?: { featured?: boolean }): Promise<Course[]> {
-  if (!hasSupabaseEnv()) return options?.featured ? fallback.courses.filter((item) => item.is_featured) : fallback.courses;
-  const supabase = createClient();
-  let query = supabase.from('courses').select('*, course_categories(*)').order('title');
-  if (options?.featured) query = query.eq('is_featured', true);
-  const { data } = await query;
-  return (data as Course[] | null)?.length ? data as Course[] : (options?.featured ? fallback.courses.filter((item) => item.is_featured) : fallback.courses);
+export async function getCourses(_options?: { featured?: boolean }): Promise<Course[]> {
+  return [];
 }
 
-export async function getCourseBySlug(slug: string): Promise<Course | null> {
-  if (!hasSupabaseEnv()) return fallback.courses.find((item) => item.slug === slug) ?? null;
-  const supabase = createClient();
-  const { data } = await supabase.from('courses').select('*, course_categories(*)').eq('slug', slug).maybeSingle();
-  return (data as Course | null) ?? fallback.courses.find((item) => item.slug === slug) ?? null;
+export async function getCourseBySlug(_slug: string): Promise<Course | null> {
+  return null;
 }
 
 export async function getTestimonials(): Promise<Testimonial[]> {
