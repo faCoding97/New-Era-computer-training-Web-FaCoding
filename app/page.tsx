@@ -23,6 +23,8 @@ const reasons = [
   ['users', 'Flexible training options', 'Training for individual learners, groups, organisations, schools and NGOs.']
 ] as const;
 
+const courseInfoMessage = 'For information about all our courses, please contact us.';
+
 export default async function HomePage() {
   const [settings, categories, courses, testimonials, posts] = await Promise.all([
     getSiteSettings(),
@@ -53,8 +55,8 @@ export default async function HomePage() {
             <h1 className="mt-4 max-w-3xl text-4xl font-bold tracking-tight text-gray-950 sm:text-6xl">Computer Training &amp; Skills Development in Port Elizabeth</h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-gray-600">Professional training programmes designed for students, employees and businesses.</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <ButtonLink href="/courses">Browse Courses</ButtonLink>
-              <ButtonLink href="/courses#booking" variant="outline">Book Training</ButtonLink>
+              <ButtonLink href="/courses">Course Information</ButtonLink>
+              <ButtonLink href="/contact" variant="outline">Contact Us</ButtonLink>
             </div>
           </div>
           <div className="rounded-2xl border border-blue-100 bg-white p-5 shadow-institution sm:p-8">
@@ -73,9 +75,24 @@ export default async function HomePage() {
 
       <section className="py-16 sm:py-20">
         <Container>
-          <SectionHeading eyebrow="Course catalogue" title="Featured training programmes" text="Build practical digital and workplace skills through structured, instructor-led courses." />
-          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">{courses.slice(0, 6).map((course) => <CourseCard key={course.id} course={course} />)}</div>
-          <div className="mt-8"><ButtonLink href="/courses" variant="outline">View all courses</ButtonLink></div>
+          <SectionHeading eyebrow="Course information" title="Training programme information" text="Contact New Era for the latest course availability, programme options and booking details." />
+          {courses.length ? (
+            <>
+              <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {courses.slice(0, 6).map((course) => <CourseCard key={course.id} course={course} />)}
+              </div>
+              <div className="mt-8"><ButtonLink href="/courses" variant="outline">View all courses</ButtonLink></div>
+            </>
+          ) : (
+            <div className="mt-10 rounded-2xl border border-blue-100 bg-white p-8 shadow-sm">
+              <h2 className="text-2xl font-bold text-gray-900">Course information</h2>
+              <p className="mt-3 text-lg leading-8 text-gray-600">{courseInfoMessage}</p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <ButtonLink href="/contact">Contact Us</ButtonLink>
+                <a href={`tel:${settings.phone}`} className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-5 py-3 text-sm font-bold text-gray-800 transition hover:border-brand hover:text-brand">Call {settings.phone}</a>
+              </div>
+            </div>
+          )}
         </Container>
       </section>
 
@@ -99,7 +116,7 @@ export default async function HomePage() {
           <SectionHeading eyebrow="Training categories" title="Choose a pathway that matches your goals" />
           <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {categories.map((category) => (
-              <Link key={category.id} href={`/courses?category=${category.slug}`} className="rounded-xl border border-gray-200 bg-white p-5 transition hover:border-brand hover:shadow-institution">
+              <Link key={category.id} href="/courses" className="rounded-xl border border-gray-200 bg-white p-5 transition hover:border-brand hover:shadow-institution">
                 <PngIcon name="check-circle" tone="accent" size={24} />
                 <h3 className="mt-4 font-bold text-gray-900">{category.name}</h3>
                 <p className="mt-2 text-sm leading-6 text-gray-600">{category.description}</p>
@@ -139,10 +156,10 @@ export default async function HomePage() {
           <SectionHeading eyebrow="Frequently asked questions" title="Plan your next training step" />
           <div className="mt-8 grid gap-4 lg:grid-cols-2">
             {[
-              ['Which course is best for beginners?', 'Computer Literacy is the recommended starting point for learners who have limited experience using computers.'],
+              ['How can I get information about available courses?', 'For information about all our courses, please contact New Era directly.'],
               ['Do you offer group training?', 'Yes. We offer group and corporate training options for organisations, schools, government teams and NGOs.'],
               ['Where is New Era based?', 'New Era Computer Training Centre serves learners and organisations in Port Elizabeth (Gqeberha), Eastern Cape.'],
-              ['How do I request a booking?', 'Select a course and submit the booking form. Our team can then discuss dates and training requirements with you.']
+              ['How do I request a booking?', 'Contact New Era with your training needs and our team can discuss availability and programme options with you.']
             ].map(([question, answer]) => (
               <details key={question} className="rounded-xl border border-gray-200 bg-white p-5">
                 <summary className="cursor-pointer font-bold text-gray-900">{question}</summary>
@@ -156,9 +173,9 @@ export default async function HomePage() {
       <section className="bg-gray-900 py-14 text-white">
         <Container className="text-center">
           <h2 className="text-3xl font-bold">Build practical skills for your next opportunity</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-gray-300">Explore our course catalogue or contact New Era to discuss individual and group training.</p>
+          <p className="mx-auto mt-4 max-w-2xl text-gray-300">Contact New Era to discuss individual and group training options.</p>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
-            <ButtonLink href="/courses" variant="secondary">Browse Courses</ButtonLink>
+            <ButtonLink href="/courses" variant="secondary">Course Information</ButtonLink>
             <ButtonLink href="/contact" className="border border-white bg-transparent hover:bg-white hover:text-gray-900">Contact Us</ButtonLink>
           </div>
         </Container>
